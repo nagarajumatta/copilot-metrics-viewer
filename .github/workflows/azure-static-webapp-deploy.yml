@@ -34,3 +34,4 @@ jobs:
           app_artifact_location: 'dist' # Built app content directory - optional
         env:
           VUE_APP_GITHUB_TOKEN: ${{ secrets.VUE_APP_GITHUB_TOKEN }}
+          VUE_APP_GITHUB_ORG: ${{ secrets.VUE_APP_GITHUB_ORG }}

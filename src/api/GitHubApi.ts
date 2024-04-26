@@ -32,7 +32,7 @@ export const getGitHubCopilotMetricsApi = async (): Promise<Metrics[]> => {
     metricsData = response.map((item: any) => new Metrics(item));
   } else {
     response = await axios.get(
-      `https://api.github.com/orgs/${envVariables.gh_orgName}/copilot/usage`,
+      `https://api.github.com/orgs/im-infomagnus/copilot/usage`,
       {
         headers: {
           Accept: "application/vnd.github+json",
