@@ -27,6 +27,7 @@ export const getGitHubCopilotMetricsApi = async (): Promise<Metrics[]> => {
     // Example usage
   console.log('API Key:', envVariables.gh_token);
   console.log('API URL:', envVariables.gh_orgName);
+  console.log('Mocked Data:', envVariables.mocked_data);
   if (process.env.VUE_APP_MOCKED_DATA === "true") {
     response = data;
     metricsData = response.map((item: any) => new Metrics(item));
