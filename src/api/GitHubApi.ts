@@ -19,11 +19,11 @@ export const getGitHubCopilotMetricsApi = async (): Promise<Metrics[]> => {
     metricsData = response.map((item: any) => new Metrics(item));
   } else {
     response = await axios.get(
-      `https://api.github.com/orgs/${process.env.VUE_APP_GITHUB_ORG}/copilot/usage`,
+      `https://api.github.com/orgs/im-infomagnus/copilot/usage`,
       {
         headers: {
           Accept: "application/vnd.github+json",
-          Authorization: `Bearer ${process.env.VUE_APP_GITHUB_TOKEN}`,
+          Authorization: `Bearer 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`,
           "X-GitHub-Api-Version": "2022-11-28",
         },
       }
