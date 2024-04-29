@@ -24,16 +24,13 @@ export const getGitHubCopilotMetricsApi = async (): Promise<Metrics[]> => {
     gh_orgName: process.env.VUE_APP_GITHUB_ORG || '',
     mocked_data: process.env.VUE_APP_MOCKED_DATA === "true",
   };
-    // Example usage
-  console.log('API Key:', envVariables.gh_token);
-  console.log('API URL:', envVariables.gh_orgName);
-  console.log('Mocked Data:', envVariables.mocked_data);
+
   if (process.env.VUE_APP_MOCKED_DATA === "true") {
     response = data;
     metricsData = response.map((item: any) => new Metrics(item));
   } else {
     response = await axios.get(
-      `https://api.github.com/orgs/im-infomagnus/copilot/usage`,
+      `https://api.github.com/orgs/${envVariables.gh_orgName}/copilot/usage`,
       {
         headers: {
           Accept: "application/vnd.github+json",
